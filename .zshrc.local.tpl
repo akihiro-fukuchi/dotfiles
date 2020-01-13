@@ -1,0 +1,1 @@
+# custom configure for zsh

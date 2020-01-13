@@ -1,0 +1,15 @@
+[core]
+        editor = vim
+        excludesfile = .gitignore
+[include]
+    path = .gitconfig.local
+[alias]
+        st = status
+        co = checkout
+        br = branch
+        up = rebase
+        ci = commit
+        follow = "!f() { git fetch upstream; git merge upstream/master; git push origin master; }; f"
+        pr = "!f() { git fetch upstream pull/$1/head:pr-$1; git checkout pr-$1; }; f"
+[color]
+        ui = auto

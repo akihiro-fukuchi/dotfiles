@@ -1,0 +1,25 @@
+cask_args appdir: "/Applications"
+
+brew "zsh"
+brew "zsh-completion"
+brew "tmux"
+brew "vim"
+brew "jq"
+brew "goenv", args: ["HEAD"]
+brew "pyenv"
+brew "pyenv-virtualenv"
+brew "http://git.io/sshpass.rb"
+brew "mysql-client@5.7"
+
+cask "alfred"
+cask "docker"
+# enable if not installed
+# cask "google-chrome"
+cask "google-japanese-ime"
+cask "intellij-idea"
+cask "iterm2"
+cask "karabiner-elements"
+cask "slack"
+cask "bettertouchtool"
+
+
