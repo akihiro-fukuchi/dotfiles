@@ -10,6 +10,7 @@ brew "pyenv"
 brew "pyenv-virtualenv"
 brew "http://git.io/sshpass.rb"
 brew "mysql-client@5.7"
+brew "protobuf"
 
 cask "alfred"
 cask "docker"
