@@ -11,11 +11,11 @@ brew "pyenv-virtualenv"
 brew "http://git.io/sshpass.rb"
 brew "mysql-client@5.7"
 brew "protobuf"
+brew "octant"
 
 cask "alfred"
 cask "docker"
-# enable if not installed
-# cask "google-chrome"
+cask "google-chrome"
 cask "google-japanese-ime"
 cask "intellij-idea"
 cask "iterm2"
