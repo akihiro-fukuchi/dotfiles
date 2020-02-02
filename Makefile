@@ -27,6 +27,11 @@ tmux-cssh: ## install tmux-cssh https://github.com/peikk0/tmux-cssh
 	chmod +x tmux-cssh
 	mv tmux-cssh /usr/local/bin/tmux-cssh
 
+kubectl-%: ## install kubectl https://kubernetes.io/docs/tasks/tools/install-kubectl
+	curl -sSLO https://storage.googleapis.com/kubernetes-release/release/$*/bin/darwin/amd64/kubectl
+	chmod +x kubectl
+	mv kubectl /usr/local/bin/kubectl
+
 kube-tmux: ## install kube-tmux https://github.com/jonmosco/kube-tmux
 	git clone https://github.com/jonmosco/kube-tmux.git
 	mkdir -p $(HOME)/.tmux
