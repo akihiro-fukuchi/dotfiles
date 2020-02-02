@@ -12,6 +12,8 @@ brew "http://git.io/sshpass.rb"
 brew "mysql-client@5.7"
 brew "protobuf"
 brew "octant"
+brew "kubectx"
+brew "stern"
 
 cask "alfred"
 cask "docker"
