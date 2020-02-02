@@ -2,7 +2,7 @@
     editor = vim
     excludesfile = ~/.gitignore
 [include]
-    path = .gitconfig.local
+    path = ~/.gitconfig.local
 [alias]
     st = status
     co = checkout
