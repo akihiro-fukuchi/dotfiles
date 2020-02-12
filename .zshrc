@@ -38,14 +38,6 @@ alias kctx='kubectx'
 alias kns='kubens'
 alias dockertags='docker run --rm goodwithtech/dockertags'
 
-kmerge () {
-    tmpfile=$(mktemp)
-    cat - | docker run --rm -i karlkfi/yq -y '.users[0].name as $u|.clusters[0].name as $c|.users[0].name = $u+"@"+$c|.contexts[0].name = $u+"@"+$c|.contexts[0].context.user = $u+"@"+$c' > $tmpfile
-    now=$(date '+%Y%m%d%H%M')
-    cp $HOME/.kube/config $HOME/.kube/config_$now
-    KUBECONFIG=$HOME/.kube/config_$now:$tmpfile kubectl config view --flatten > $HOME/.kube/config
-}
-
 # History File
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
