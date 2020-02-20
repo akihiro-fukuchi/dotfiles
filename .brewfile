@@ -27,5 +27,5 @@ cask "iterm2"
 cask "karabiner-elements"
 cask "slack"
 cask "bettertouchtool"
-
+cask "kindle"
 
