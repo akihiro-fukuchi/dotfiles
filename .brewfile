@@ -17,6 +17,8 @@ brew "stern"
 brew "minikube"
 brew "kind"
 brew "github/gh/gh"
+brew "wget"
+brew "pwgen"
 
 cask "alfred"
 cask "docker"
