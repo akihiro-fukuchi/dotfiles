@@ -20,6 +20,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
+# node
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
 # paths
 export "PATH=/usr/local/opt/mysql-client@5.7/bin:$PATH"
 export "PATH=${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
