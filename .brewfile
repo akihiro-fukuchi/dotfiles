@@ -24,6 +24,7 @@ brew "plantuml"
 brew "lua"
 brew "pwgen"
 brew "helm"
+brew "wireshark"
 
 cask "alfred"
 cask "docker"
