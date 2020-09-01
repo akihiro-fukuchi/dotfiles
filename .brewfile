@@ -37,3 +37,5 @@ cask "slack"
 cask "bettertouchtool"
 cask "kindle"
 cask "sequel-pro"
+cask "wireshark"
+
