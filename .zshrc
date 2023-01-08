@@ -20,13 +20,19 @@ if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
+# rust
+source $HOME/.cargo/env
+
 # node
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# deno
+export PATH=$HOME/.deno/bin:$PATH
 
 # paths
 export "PATH=/usr/local/opt/mysql-client@5.7/bin:$PATH"
 export "PATH=${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
+export "PATH=$HOME/.rd/bin:$PATH"
 # alias
 alias ls='ls -G'
 alias rm='rm -i'
@@ -60,7 +66,7 @@ function chpwd() { ls }
 fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -Uz compinit
 compinit -u
-source <(kubectl completion zsh)
+#source <(kubectl completion zsh)
 source <(stern --completion=zsh)
 
 # Prompt
@@ -79,4 +85,4 @@ precmd () {
 RPROMPT="%1(v|%F{green}%1v%f|)"
 
 # custom configure
-source ~/.zshrc.local
+#source ~/.zshrc.local

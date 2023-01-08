@@ -14,3 +14,7 @@
     sync = "!f() { git reset --hard upstream/master; git push --force; }; f"
 [color]
     ui = auto
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false

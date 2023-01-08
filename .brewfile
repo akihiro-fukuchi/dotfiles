@@ -38,4 +38,5 @@ cask "bettertouchtool"
 cask "kindle"
 cask "sequel-pro"
 cask "wireshark"
+cask "visual-studio-code"
 
