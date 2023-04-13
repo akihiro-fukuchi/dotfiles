@@ -2,14 +2,7 @@ xcode: ## install Command Line Tools
 	xcode-select --install
 
 brew: ## install brew https://brew.sh/
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-install: ## install OSX packages
-	brew bundle --file=~/.brewfile
-
-zsh: ## default shell zsh
-	sudo sh -c ‘echo /usr/local/bin/zsh >> /etc/shells’
-	chsh -s /usr/local/bin/zsh
+	/bin/bash -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 link: ## create link for git controlled configure files.
 	ln -s $(PWD)/.brewfile $(HOME)/.brewfile
@@ -21,6 +14,8 @@ link: ## create link for git controlled configure files.
 	mkdir -p $(HOME)/.config
 	ln -s $(PWD)/.config/karabiner $(HOME)/.config/karabiner
 
+install: ## install OSX packages
+	brew bundle --file=~/.brewfile
 
 tmux-cssh: ## install tmux-cssh https://github.com/peikk0/tmux-cssh
 	curl -sSLO https://raw.githubusercontent.com/peikk0/tmux-cssh/master/tmux-cssh

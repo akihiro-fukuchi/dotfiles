@@ -46,6 +46,7 @@ alias rand='() { openssl rand -base64 256 | fold -w ${1:-16} | head -n1}'
 alias kctx='kubectx'
 alias kns='kubens'
 alias dockertags='docker run --rm goodwithtech/dockertags'
+alias sed='gsed'
 
 # History File
 HISTFILE=~/.zsh_history
