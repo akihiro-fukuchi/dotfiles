@@ -17,11 +17,6 @@ link: ## create link for git controlled configure files.
 install: ## install OSX packages
 	brew bundle --file=~/.brewfile
 
-tmux-cssh: ## install tmux-cssh https://github.com/peikk0/tmux-cssh
-	curl -sSLO https://raw.githubusercontent.com/peikk0/tmux-cssh/master/tmux-cssh
-	chmod +x tmux-cssh
-	mv tmux-cssh /usr/local/bin/tmux-cssh
-
 kubectl-%: ## install kubectl https://kubernetes.io/docs/tasks/tools/install-kubectl
 	curl -sSLO https://storage.googleapis.com/kubernetes-release/release/$*/bin/darwin/amd64/kubectl
 	chmod +x kubectl
@@ -60,6 +55,8 @@ apps: ## application settings
 	# - shift + cursor/CMD + cursor
 	# Alfred
 	# - key to CMD + SPACE
+	# iTerm2
+	# - Profiles > Terminal > Enable mouse reporting OFF
 
 help:
 	@grep -E '^[a-zA-Z0-9_-]+%?:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'

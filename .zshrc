@@ -1,38 +1,7 @@
 # Enviroment
 export LANG=ja_JP.UTF-8
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# golang
-# https://github.com/syndbg/goenv
-export GO111MODULE=on
-export PATH="$HOME/.goenv/bin:$PATH"
-export GOENV_DISABLE_GOPATH=1
-eval "$(goenv init -)"
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-
-# python
-# https://github.com/pyenv/pyenv#installation
-# https://github.com/pyenv/pyenv-virtualenv#installing-with-homebrew-for-macos-users
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
-
-# rust
-source $HOME/.cargo/env
-
-# node
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-
-# deno
-export PATH=$HOME/.deno/bin:$PATH
-
-# paths
-export "PATH=/usr/local/opt/mysql-client@5.7/bin:$PATH"
-export "PATH=${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-export "PATH=$HOME/.rd/bin:$PATH"
 # alias
 alias ls='ls -G'
 alias rm='rm -i'
@@ -40,13 +9,11 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias vi='vim'
-alias k='kubectl'
-alias ij='idea'
-alias rand='() { openssl rand -base64 256 | fold -w ${1:-16} | head -n1}'
-alias kctx='kubectx'
-alias kns='kubens'
-alias dockertags='docker run --rm goodwithtech/dockertags'
-alias sed='gsed'
+#alias k='kubectl'
+#alias kctx='kubectx'
+#alias kns='kubens'
+
+# export "PATH=${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # History File
 HISTFILE=~/.zsh_history
@@ -68,10 +35,9 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -Uz compinit
 compinit -u
 #source <(kubectl completion zsh)
-source <(stern --completion=zsh)
+#source <(stern --completion=zsh)
 
 # Prompt
-# PROMPT="%F{green}[%n@%m]%f %~ %# "
 PROMPT="%F{green}[%n@%m]%f %~ %# "
 
 # vcs_info
