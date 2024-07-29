@@ -53,3 +53,7 @@ RPROMPT="%1(v|%F{green}%1v%f|)"
 
 # custom configure
 #source ~/.zshrc.local
+
+# 1password
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+
