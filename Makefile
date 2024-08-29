@@ -2,7 +2,7 @@ xcode: ## install Command Line Tools
 	xcode-select --install
 
 brew: ## install brew https://brew.sh/
-	/bin/bash -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 link: ## create link for git controlled configure files.
 	ln -s $(PWD)/.brewfile $(HOME)/.brewfile
