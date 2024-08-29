@@ -10,6 +10,7 @@ brew "pwgen"
 brew "docker-buildx"
 brew "gnu-sed"
 brew "yq"
+brew "orbstack"
 
 cask "alfred"
 cask "docker"
