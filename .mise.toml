@@ -1,0 +1,4 @@
+[tools]
+terraform = "1.9.8"
+go = "1.21"
+cue = "0.10.1"

@@ -10,12 +10,8 @@ alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias vi='vim'
 alias k='kubectl'
-#alias kctx='kubectx'
-#alias kns='kubens'
 
 export "PATH=${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
-export PATH="$(aqua root-dir)/bin:$PATH"
 
 # History File
 HISTFILE=~/.zsh_history
@@ -59,9 +55,9 @@ RPROMPT="%1(v|%F{green}%1v%f|)"
 # 1password
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
-# asdf
-# https://asdf-vm.com/guide/getting-started.html#_3-install-asdf
-. $(brew --prefix asdf)/libexec/asdf.sh
+# mise
+# https://mise.jdx.dev/getting-started.html#_2a-activate-mise
+eval "$(mise activate zsh)"
 
 # gcloud
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True

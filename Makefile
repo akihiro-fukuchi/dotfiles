@@ -5,17 +5,19 @@ brew: ## install brew https://brew.sh/
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 link: ## create link for git controlled configure files.
-	ln -s $(PWD)/.brewfile $(HOME)/.brewfile
-	ln -s $(PWD)/.gitconfig $(HOME)/.gitconfig
-	ln -s $(PWD)/.gitignore $(HOME)/.gitignore
-	ln -s $(PWD)/.tmux.conf $(HOME)/.tmux.conf
-	ln -s $(PWD)/.vimrc $(HOME)/.vimrc
-	ln -s $(PWD)/.zshrc $(HOME)/.zshrc
+	ln -snfv $(PWD)/.brewfile $(HOME)/.brewfile
+	ln -snfv $(PWD)/.gitconfig $(HOME)/.gitconfig
+	ln -snfv $(PWD)/.gitignore $(HOME)/.gitignore
+	ln -snfv $(PWD)/.tmux.conf $(HOME)/.tmux.conf
+	ln -snfv $(PWD)/.vimrc $(HOME)/.vimrc
+	ln -snfv $(PWD)/.zshrc $(HOME)/.zshrc
+	ln -snfv $(PWD)/.mise.toml $(HOME)/.mise.toml
 	mkdir -p $(HOME)/.config
-	ln -s $(PWD)/.config/karabiner $(HOME)/.config/karabiner
+	ln -snfv $(PWD)/.config/karabiner $(HOME)/.config/karabiner
 
 install: ## install OSX packages
 	brew bundle --file=~/.brewfile
+	mise install
 
 kubectl-%: ## install kubectl https://kubernetes.io/docs/tasks/tools/install-kubectl
 	curl -sSLO https://storage.googleapis.com/kubernetes-release/release/$*/bin/darwin/amd64/kubectl
