@@ -50,7 +50,9 @@ precmd () {
 RPROMPT="%1(v|%F{green}%1v%f|)"
 
 # custom configure
-#source ~/.zshrc.local
+if [ -e ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
 
 # 1password
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock

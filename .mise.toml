@@ -1,4 +1,8 @@
 [tools]
 terraform = "1.9.8"
 go = "1.21"
-cue = "0.10.1"
+cue = "0.4.3"
+
+[settings]
+legacy_version_file_disable_tools = ["terraform", "packer"]
+

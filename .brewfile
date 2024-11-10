@@ -11,6 +11,7 @@ brew "docker-buildx"
 brew "gnu-sed"
 brew "yq"
 brew "mise"
+brew "grpcurl"
 
 cask "alfred"
 cask "orbstack"
