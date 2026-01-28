@@ -9,9 +9,17 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias vi='vim'
-alias k='kubectl'
+alias kubectl='kubecolor'
+alias k='kubecolor'
+alias j='git'
+alias m='mise'
+alias code='cursor'
+alias ip='ipconfig getifaddr en0'
 
-export "PATH=${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export "PATH=${HOME}/.local/bin:$PATH"
+
+# direnv
+eval "$(direnv hook zsh)"
 
 # History File
 HISTFILE=~/.zsh_history
@@ -32,8 +40,11 @@ function chpwd() { ls }
 fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -Uz compinit
 compinit -u
-#source <(kubectl completion zsh)
-#source <(stern --completion=zsh)
+source <(kubectl completion zsh)
+source <(stern --completion=zsh)
+
+# krew
+export "PATH=${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # Prompt
 PROMPT="%F{green}[%n@%m]%f %~ %# "
@@ -60,8 +71,14 @@ export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agen
 # mise
 # https://mise.jdx.dev/getting-started.html#_2a-activate-mise
 eval "$(mise activate zsh)"
+eval "$(mise activate --shims)"
 
-# gcloud
-export USE_GKE_GCLOUD_AUTH_PLUGIN=True
-source "$(gcloud info --format='value(config.paths.sdk_root)')/path.zsh.inc" && source "$(gcloud info --format='value(config.paths.sdk_root)')/completion.zsh.inc"
+eval "$(starship init zsh)"
 
+# zoxide
+eval "$(zoxide init zsh)"
+source <(fzf --zsh)
+
+# bun
+[ -s "${HOME}/.bun/_bun" ] && source "${HOME}/.bun/_bun"
+export "PATH=${HOME}/.bun/bin:$PATH"

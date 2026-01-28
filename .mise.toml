@@ -1,8 +1,10 @@
 [tools]
-terraform = "1.9.8"
-go = "1.21"
-cue = "0.4.3"
-
-[settings]
-legacy_version_file_disable_tools = ["terraform", "packer"]
-
+go = "1.24.1"
+github-cli = "latest"
+kubectl = "1.31.2"
+stern = "latest"
+kubecolor = "0.4.0"
+terraform = "1.10.3"
+uv = "latest"
+bun = "latest"
+krew = "latest"

@@ -9,3 +9,26 @@
     defaultBranch = main
 [pull]
     rebase = false
+[alias]
+    a = add
+    s = status .
+    c = commit --no-verify
+    d = diff .
+    co = checkout
+    br = branch
+    cm = commit
+    gr = grep
+    pl = pull
+    ps = push
+    p = "!f() { git push origin $(git branch --show-current); }; f"
+[push]
+	autoSetupRemote = true
+
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

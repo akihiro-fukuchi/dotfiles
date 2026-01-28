@@ -76,3 +76,5 @@ set whichwrap=b,s,h,l,<,>,[,]
 " display zenkakuspace
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 match ZenkakuSpace /　/
+autocmd FileType json,yaml setlocal tabstop=2 shiftwidth=2 expandtab softtabstop=2
+

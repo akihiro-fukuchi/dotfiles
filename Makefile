@@ -19,20 +19,6 @@ install: ## install OSX packages
 	brew bundle --file=~/.brewfile
 	mise install
 
-kubectl-%: ## install kubectl https://kubernetes.io/docs/tasks/tools/install-kubectl
-	curl -sSLO https://storage.googleapis.com/kubernetes-release/release/$*/bin/darwin/amd64/kubectl
-	chmod +x kubectl
-	mv kubectl /usr/local/bin/kubectl
-
-KREW = ./krew-$(shell uname | tr '[:upper:]' '[:lower:]')_amd64
-
-krew: ## install krew https://krew.sigs.k8s.io/docs/user-guide/setup/install/
-	@cd $(shell mktemp -d) && \
-	curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/krew.{tar.gz,yaml}" && \
-	tar zxvf krew.tar.gz && \
-	$(KREW) install --manifest=krew.yaml --archive=krew.tar.gz && \
-	$(KREW) update
-
 kube-tmux: ## install kube-tmux https://github.com/jonmosco/kube-tmux
 	git clone https://github.com/jonmosco/kube-tmux.git
 	mkdir -p $(HOME)/.tmux
