@@ -27,6 +27,7 @@ cask "deepl"
 cask "docker-desktop"
 cask "gcloud-cli"
 cask "1password-cli"
+cask "claude-code"
 
 # cask "google-chrome"
 # cask "slack"

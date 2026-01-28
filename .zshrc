@@ -40,8 +40,9 @@ function chpwd() { ls }
 fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -Uz compinit
 compinit -u
-source <(kubectl completion zsh)
-source <(stern --completion=zsh)
+# heavy to load...
+# source <(kubectl completion zsh)
+# source <(stern --completion=zsh)
 
 # krew
 export "PATH=${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
